@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+</head>
+<body>
+    <script>
+        // Get the document number from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const docNumber = urlParams.get('doc');
+
+        // If we have a 6-digit number, redirect to the PDF
+        if (docNumber && /^\d{6}$/.test(docNumber)) {
+            window.location.href = `https://kapitaldoc.repository.com/files/${docNumber}`;
+        }
+    </script>
+</body>
+</html> 
